@@ -22,6 +22,7 @@
                                                                                           scoreModule:YES
                                                                                        buttonControls:NO
                                                                                         swipeControls:YES];
+    c.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:c animated:YES completion:nil];
 }
 
