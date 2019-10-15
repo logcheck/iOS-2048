@@ -178,24 +178,24 @@ PODS:
   - Yoga (1.14.0)
 
 DEPENDENCIES:
-  - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
-  - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
-  - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
+  - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/`)
+  - Folly (from `../node_modules/react-native/third-party-podspecs/`)
+  - glog (from `../node_modules/react-native/third-party-podspecs/`)
   - React (from `../node_modules/react-native/`)
   - React-Core (from `../node_modules/react-native/`)
   - React-cxxreact (from `../node_modules/react-native/ReactCommon/cxxreact`)
   - React-jsi (from `../node_modules/react-native/ReactCommon/jsi`)
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
-  - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS/React-RCTActionSheet.podspec`)
-  - React-RCTAnimation (from `../node_modules/react-native/Libraries/NativeAnimation/React-RCTAnimation.podspec`)
-  - React-RCTBlob (from `../node_modules/react-native/Libraries/Blob/React-RCTBlob.podspec`)
-  - React-RCTImage (from `../node_modules/react-native/Libraries/Image/React-RCTImage.podspec`)
-  - React-RCTLinking (from `../node_modules/react-native/Libraries/LinkingIOS/React-RCTLinking.podspec`)
-  - React-RCTNetwork (from `../node_modules/react-native/Libraries/Network/React-RCTNetwork.podspec`)
-  - React-RCTSettings (from `../node_modules/react-native/Libraries/Settings/React-RCTSettings.podspec`)
-  - React-RCTText (from `../node_modules/react-native/Libraries/Text/React-RCTText.podspec`)
-  - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration/React-RCTVibration.podspec`)
+  - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS/`)
+  - React-RCTAnimation (from `../node_modules/react-native/Libraries/NativeAnimation/`)
+  - React-RCTBlob (from `../node_modules/react-native/Libraries/Blob/`)
+  - React-RCTImage (from `../node_modules/react-native/Libraries/Image/`)
+  - React-RCTLinking (from `../node_modules/react-native/Libraries/LinkingIOS/`)
+  - React-RCTNetwork (from `../node_modules/react-native/Libraries/Network/`)
+  - React-RCTSettings (from `../node_modules/react-native/Libraries/Settings/`)
+  - React-RCTText (from `../node_modules/react-native/Libraries/Text/`)
+  - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration/`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga/Yoga.podspec`)
 
 SPEC REPOS:
@@ -204,11 +204,11 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   DoubleConversion:
-    :podspec: "../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec"
+    :path: "../node_modules/react-native/third-party-podspecs/"
   Folly:
-    :podspec: "../node_modules/react-native/third-party-podspecs/Folly.podspec"
+    :path: "../node_modules/react-native/third-party-podspecs/"
   glog:
-    :podspec: "../node_modules/react-native/third-party-podspecs/glog.podspec"
+    :path: "../node_modules/react-native/third-party-podspecs/"
   React:
     :path: "../node_modules/react-native/"
   React-Core:
@@ -222,23 +222,23 @@ EXTERNAL SOURCES:
   React-jsinspector:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
   React-RCTActionSheet:
-    :path: "../node_modules/react-native/Libraries/ActionSheetIOS/React-RCTActionSheet.podspec"
+    :path: "../node_modules/react-native/Libraries/ActionSheetIOS/"
   React-RCTAnimation:
-    :path: "../node_modules/react-native/Libraries/NativeAnimation/React-RCTAnimation.podspec"
+    :path: "../node_modules/react-native/Libraries/NativeAnimation/"
   React-RCTBlob:
-    :path: "../node_modules/react-native/Libraries/Blob/React-RCTBlob.podspec"
+    :path: "../node_modules/react-native/Libraries/Blob/"
   React-RCTImage:
-    :path: "../node_modules/react-native/Libraries/Image/React-RCTImage.podspec"
+    :path: "../node_modules/react-native/Libraries/Image/"
   React-RCTLinking:
-    :path: "../node_modules/react-native/Libraries/LinkingIOS/React-RCTLinking.podspec"
+    :path: "../node_modules/react-native/Libraries/LinkingIOS/"
   React-RCTNetwork:
-    :path: "../node_modules/react-native/Libraries/Network/React-RCTNetwork.podspec"
+    :path: "../node_modules/react-native/Libraries/Network/"
   React-RCTSettings:
-    :path: "../node_modules/react-native/Libraries/Settings/React-RCTSettings.podspec"
+    :path: "../node_modules/react-native/Libraries/Settings/"
   React-RCTText:
-    :path: "../node_modules/react-native/Libraries/Text/React-RCTText.podspec"
+    :path: "../node_modules/react-native/Libraries/Text/"
   React-RCTVibration:
-    :path: "../node_modules/react-native/Libraries/Vibration/React-RCTVibration.podspec"
+    :path: "../node_modules/react-native/Libraries/Vibration/"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga/Yoga.podspec"
 
@@ -264,6 +264,6 @@ SPEC CHECKSUMS:
   React-RCTVibration: fb54c732fd20405a76598e431aa2f8c2bf527de9
   Yoga: 14927e37bd25376d216b150ab2a561773d57911f
 
-PODFILE CHECKSUM: ce56f3acbb7b567136f767f9b83284517e506182
+PODFILE CHECKSUM: 5b25c2461a8fd3bad901c62fb22a6addc91da474
 
 COCOAPODS: 1.8.3
