@@ -1,0 +1,41 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'NumberTileGame' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+  platform :ios, '13.0'
+
+  # Pods for NumberTileGame
+  #
+  # Your 'node_modules' directory is probably in the root of your project,
+  # but if not, adjust the `:path` accordingly
+  pod 'React', :path => '../node_modules/react-native/'
+  pod 'React-Core', :path => '../node_modules/react-native/'
+  pod 'React-RCTActionSheet', :path => '../node_modules/react-native/Libraries/ActionSheetIOS/React-RCTActionSheet.podspec'
+  pod 'React-RCTAnimation', :path => '../node_modules/react-native/Libraries/NativeAnimation/React-RCTAnimation.podspec'
+  pod 'React-RCTBlob', :path => '../node_modules/react-native/Libraries/Blob/React-RCTBlob.podspec'
+  pod 'React-RCTImage', :path => '../node_modules/react-native/Libraries/Image/React-RCTImage.podspec'
+  pod 'React-RCTLinking', :path => '../node_modules/react-native/Libraries/LinkingIOS/React-RCTLinking.podspec'
+  pod 'React-RCTNetwork', :path => '../node_modules/react-native/Libraries/Network/React-RCTNetwork.podspec'
+  pod 'React-RCTSettings', :path => '../node_modules/react-native/Libraries/Settings/React-RCTSettings.podspec'
+  pod 'React-RCTText', :path => '../node_modules/react-native/Libraries/Text/React-RCTText.podspec'
+  pod 'React-RCTVibration', :path => '../node_modules/react-native/Libraries/Vibration/React-RCTVibration.podspec'
+
+
+  pod 'React-cxxreact', :path => '../node_modules/react-native/ReactCommon/cxxreact'
+  pod 'React-jsi', :path => '../node_modules/react-native/ReactCommon/jsi'
+  pod 'React-jsiexecutor', :path => '../node_modules/react-native/ReactCommon/jsiexecutor'
+  pod 'React-jsinspector', :path => '../node_modules/react-native/ReactCommon/jsinspector'
+  pod 'Yoga', :path => '../node_modules/react-native/ReactCommon/yoga/Yoga.podspec'
+
+  pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
+  pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
+  pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
+
+  target 'NumberTileGameTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
