@@ -12,6 +12,14 @@ target 'NumberTileGame' do
   # but if not, adjust the `:path` accordingly
   pod 'React', :path => '../node_modules/react-native/'
   pod 'React-Core', :path => '../node_modules/react-native/'
+
+  pod 'React-CoreModules', :path => '../node_modules/react-native/React/CoreModules/'
+  pod 'FBReactNativeSpec', :path => '../node_modules/react-native/Libraries/FBReactNativeSpec/'
+  pod 'RCTRequired', :path => '../node_modules/react-native/Libraries/RCTRequired/'
+  pod 'RCTTypeSafety', :path => '../node_modules/react-native/Libraries/TypeSafety/'
+  pod 'ReactCommon', :path => '../node_modules/react-native/ReactCommon/'
+  pod 'FBLazyVector', :path => '../node_modules/react-native/Libraries/FBLazyVector/'
+
   pod 'React-RCTActionSheet', :path => '../node_modules/react-native/Libraries/ActionSheetIOS/'
   pod 'React-RCTAnimation', :path => '../node_modules/react-native/Libraries/NativeAnimation/'
   pod 'React-RCTBlob', :path => '../node_modules/react-native/Libraries/Blob/'
@@ -22,16 +30,15 @@ target 'NumberTileGame' do
   pod 'React-RCTText', :path => '../node_modules/react-native/Libraries/Text/'
   pod 'React-RCTVibration', :path => '../node_modules/react-native/Libraries/Vibration/'
 
-
   pod 'React-cxxreact', :path => '../node_modules/react-native/ReactCommon/cxxreact'
   pod 'React-jsi', :path => '../node_modules/react-native/ReactCommon/jsi'
   pod 'React-jsiexecutor', :path => '../node_modules/react-native/ReactCommon/jsiexecutor'
   pod 'React-jsinspector', :path => '../node_modules/react-native/ReactCommon/jsinspector'
   pod 'Yoga', :path => '../node_modules/react-native/ReactCommon/yoga/Yoga.podspec'
 
-  pod 'DoubleConversion', :path => '../node_modules/react-native/third-party-podspecs/'
-  pod 'glog', :path => '../node_modules/react-native/third-party-podspecs/'
-  pod 'Folly', :path => '../node_modules/react-native/third-party-podspecs/'
+  pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
+  pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
+  pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
   target 'NumberTileGameTests' do
     inherit! :search_paths
