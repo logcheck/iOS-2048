@@ -22,7 +22,7 @@
                                                                                          winThreshold:2048
                                                                                       backgroundColor:[UIColor whiteColor]
                                                                                           scoreModule:YES
-                                                                                       buttonControls:NO
+                                                                                       buttonControls:YES
                                                                                         swipeControls:YES];
     c.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:c animated:YES completion:nil];
