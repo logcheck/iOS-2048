@@ -247,8 +247,7 @@
 }
 
 - (void)exitButtonTapped {
-    [HighScoreArchiver writeScore:@(self.model.score)];
-    [HighScoreArchiver readScore];
+    [HighScoreArchiver addScore:@(self.model.score)];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

@@ -8,6 +8,10 @@
 #import "HighScoreArchiver.h"
 static NSString *const highScoreArchivePath = @"highScoreArchive";
 
+@interface HighScoreArchiver()
++ (BOOL)writeScores:(NSArray*)scores;
+@end
+
 @implementation HighScoreArchiver
 
 + (NSString*)filePath {
@@ -18,15 +22,33 @@ static NSString *const highScoreArchivePath = @"highScoreArchive";
     return path;
 }
 
-+ (BOOL)writeScore:(NSNumber*)score {
-    //NSLog(@"value passed to archiver: %@", score);
-    return [NSKeyedArchiver archiveRootObject:score toFile:self.filePath];
++ (void)addScore:(NSNumber*)score {
+    NSLog(@"new score added: %@", score);
+
+    NSArray* scores = self.readScores;
+    scores = [scores arrayByAddingObject:score];
+
+    // This makes me cry
+    NSSortDescriptor* sortDesc = [NSSortDescriptor sortDescriptorWithKey:nil ascending:NO];
+    scores = [scores sortedArrayUsingDescriptors:@[sortDesc]];
+
+    if ([scores count] > 3) {
+        scores = [scores subarrayWithRange:NSMakeRange(0, 3)];
+    }
+
+    [self writeScores:scores];
 }
 
-+ (NSNumber*)readScore {
-    NSNumber *score = [NSKeyedUnarchiver unarchiveObjectWithFile:self.filePath];
-    //  NSLog(@"value returned from archiver: %@", score);
-    return score;
++ (BOOL)writeScores:(NSArray*)scores {
+    NSLog(@"values written to archive: %@", scores);
+
+    return [NSKeyedArchiver archiveRootObject:scores toFile:[self filePath]];
+}
+
++ (NSArray*)readScores {
+    NSArray *scores = [NSKeyedUnarchiver unarchiveObjectWithFile:[self filePath]];
+    NSLog(@"value read from archive: %@", scores);
+    return scores;
 }
 
 @end

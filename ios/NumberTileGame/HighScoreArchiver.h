@@ -9,9 +9,8 @@
 #define HighScoreArchiver_h
 
 @interface HighScoreArchiver : NSObject
-
-+ (BOOL)writeScore:(NSNumber*)score;
-+ (NSNumber*)readScore;
++ (void)addScore:(NSNumber*)score;
++ (NSArray*)readScores;
 @end
 
 #endif /* HighScoreArchiver_h */
