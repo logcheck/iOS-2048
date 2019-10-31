@@ -48,6 +48,14 @@ static NSString *const highScoreArchivePath = @"highScoreArchive";
 + (NSArray*)readScores {
     NSArray *scores = [NSKeyedUnarchiver unarchiveObjectWithFile:[self filePath]];
     NSLog(@"value read from archive: %@", scores);
+    // TODO: is this null check right?
+    // I also tried (scores == [NSNull null]), which didn't work.
+    // I'm assuming NSNull is a null object, and 'NULL' is a primitive...
+    // What's the correct pattern for this?
+    if (scores == NULL) {
+        NSLog(@"encountered null value from archive");
+        scores = @[];
+    }
     return scores;
 }
 
