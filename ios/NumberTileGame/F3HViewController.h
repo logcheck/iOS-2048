@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <React/RCTBridgeModule.h>
 
-@interface F3HViewController : UIViewController
+@interface F3HViewController : UIViewController <RCTBridgeModule>
 
 @end

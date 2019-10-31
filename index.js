@@ -1,18 +1,27 @@
 import React from 'react';
-import {AppRegistry, StyleSheet, Text, View} from 'react-native';
+import {AppRegistry, StyleSheet, Text, View, Button, NativeModules} from 'react-native';
 
 class RNHighScores extends React.Component {
+
+  _exitButtonPressed() {
+    vc = NativeModules.F3HViewController
+    vc.exitHighScoreButtonTapped()
+  }
+
   render() {
     var contents = this.props['scores'].map((score) => (
-      <Text key={score.name}>
-        {score.name}:{score.value}
-        {'\n'}
+      <Text key={score}>
+        {score}
+        {"\n"}
       </Text>
     ));
     return (
       <View style={styles.container}>
         <Text style={styles.highScoresTitle}>2048 High Scores!</Text>
         <Text style={styles.scores}>{contents}</Text>
+        <Button title={'Exit'} onPress={this._exitButtonPressed}>
+          <Text>Exit</Text>
+        </Button>
       </View>
     );
   }
