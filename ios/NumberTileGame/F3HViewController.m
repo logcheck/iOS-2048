@@ -10,6 +10,8 @@
 
 #import "F3HViewController.h"
 
+#import "F3HAppDelegate.h"
+
 #import "F3HNumberTileGameViewController.h"
 
 #import "HighScoreArchiver.h"
@@ -39,9 +41,12 @@
                                 moduleName: @"RNHighScores"
                          initialProperties:@{@"scores" : [HighScoreArchiver readScores]}
                              launchOptions: nil];
-    UIViewController *vc = [[UIViewController alloc] init];
-    vc.view = rootView;
-    [self presentViewController:vc animated:YES completion:nil];
+    UIViewController *rootViewController = [[UIViewController alloc] init];
+    rootViewController.view = rootView;
+    [self presentViewController:rootViewController animated:YES completion:nil];
+
+    F3HAppDelegate *delegate = (F3HAppDelegate *)[[UIApplication sharedApplication] delegate];
+    delegate.rootViewController = rootViewController;
 }
 
 // React Native Stuff
@@ -49,9 +54,8 @@ RCT_EXPORT_MODULE();
 
 RCT_EXPORT_METHOD(exitHighScoreButtonTapped) {
     NSLog(@"exitHighScoreButtonTapped called!");
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
-    });
+    F3HAppDelegate *delegate = (F3HAppDelegate *)[[UIApplication sharedApplication] delegate];
+    [delegate.rootViewController dismissViewControllerAnimated:YES completion:nil];
 }
     
         
