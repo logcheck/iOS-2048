@@ -10,7 +10,7 @@
 
 #import "F3HViewController.h"
 
-#import "F3HAppDelegate.h"
+#import "F3HBridgeModule.h"
 
 #import "F3HNumberTileGameViewController.h"
 
@@ -45,23 +45,7 @@
     rootViewController.view = rootView;
     [self presentViewController:rootViewController animated:YES completion:nil];
 
-    F3HAppDelegate *delegate = (F3HAppDelegate *)[[UIApplication sharedApplication] delegate];
-    delegate.rootViewController = rootViewController;
-}
-
-// React Native Stuff
-RCT_EXPORT_MODULE();
-
-RCT_EXPORT_METHOD(exitHighScoreButtonTapped) {
-    NSLog(@"exitHighScoreButtonTapped called!");
-    F3HAppDelegate *delegate = (F3HAppDelegate *)[[UIApplication sharedApplication] delegate];
-    [delegate.rootViewController dismissViewControllerAnimated:YES completion:nil];
-}
-    
-        
-    
-+ (bool)requiresMainQueueSetup {
-    return YES;
+    [F3HBridgeModule setMenuViewController:self];
 }
 
 @end

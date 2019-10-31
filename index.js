@@ -4,13 +4,12 @@ import {AppRegistry, StyleSheet, Text, View, Button, NativeModules} from 'react-
 class RNHighScores extends React.Component {
 
   _exitButtonPressed() {
-    vc = NativeModules.F3HViewController
-    vc.exitHighScoreButtonTapped()
+    NativeModules.F3HBridgeModule.exitHighScoreButtonTapped()
   }
 
   render() {
-    var contents = this.props['scores'].map((score) => (
-      <Text key={score}>
+    var contents = this.props['scores'].map((score, i) => (
+      <Text key={'score-' + i}>
         {score}
         {"\n"}
       </Text>
