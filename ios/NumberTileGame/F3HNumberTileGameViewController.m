@@ -99,7 +99,7 @@
         controlView = [F3HControlView controlViewWithCornerRadius:6
                                                   backgroundColor:[UIColor blackColor]
                                                   movementButtons:YES
-                                                       exitButton:NO
+                                                       exitButton:YES
                                                          delegate:self];
         totalHeight += (ELEMENT_SPACING + controlView.bounds.size.height);
         self.controlView = controlView;
@@ -246,6 +246,9 @@
 }
 
 - (void)exitButtonTapped {
+    NSLog(@"=====>");
+    NSLog(@"=====> The score of this game was %li", self.model.score);
+    NSLog(@"=====>");
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
