@@ -29,8 +29,8 @@ static NSString *const highScoreArchivePath = @"highScoreArchive";
     scores = [scores arrayByAddingObject:score];
 
     // This makes me cry
-    NSSortDescriptor* sortDesc = [NSSortDescriptor sortDescriptorWithKey:nil ascending:NO];
-    scores = [scores sortedArrayUsingDescriptors:@[sortDesc]];
+    scores = [scores sortedArrayUsingSelector:@selector(compare:)];
+    scores = [[scores reverseObjectEnumerator] allObjects];
 
     if ([scores count] > 3) {
         scores = [scores subarrayWithRange:NSMakeRange(0, 3)];
