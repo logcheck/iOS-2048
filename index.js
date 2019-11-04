@@ -8,12 +8,21 @@ class RNHighScores extends React.Component {
   }
 
   render() {
-    var contents = this.props['scores'].map((score, i) => (
+    var scores = this.props['scores']
+
+    var scoreContent = scores.map((score, i) => (
       <Text key={'score-' + i}>
-        {score}
+        {score.value} - {score.createdAt}
         {"\n"}
       </Text>
-    ));
+    ))
+
+    var contents = (scores.length > 0) ?
+      scoreContent
+    :
+      <Text>No scores yet!</Text>
+    ;
+
     return (
       <View style={styles.container}>
         <Text style={styles.highScoresTitle}>2048 High Scores!</Text>

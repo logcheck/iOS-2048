@@ -22,15 +22,29 @@ static NSString *const highScoreArchivePath = @"highScoreArchive";
     return path;
 }
 
-+ (void)addScore:(NSNumber*)score {
-    NSLog(@"new score added: %@", score);
++ (void)addScore:(NSNumber*)value {
+    NSLog(@"new score added of: %@", value);
 
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateStyle = NSDateFormatterShortStyle;
+    dateFormatter.timeStyle = NSDateFormatterShortStyle;
+    NSString *dateString = [dateFormatter stringFromDate:[NSDate date]];
+
+    NSDictionary *score = @{
+                                 @"value" : value,
+                                 @"createdAt" : dateString
+                           };
     NSArray* scores = self.readScores;
     scores = [scores arrayByAddingObject:score];
 
+
+
     // This makes me cry
-    scores = [scores sortedArrayUsingSelector:@selector(compare:)];
-    scores = [[scores reverseObjectEnumerator] allObjects];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]
+                                        initWithKey:@"value"
+                                        ascending:NO];
+    scores = [scores sortedArrayUsingDescriptors:@[sortDescriptor]];
+
 
     if ([scores count] > 3) {
         scores = [scores subarrayWithRange:NSMakeRange(0, 3)];
