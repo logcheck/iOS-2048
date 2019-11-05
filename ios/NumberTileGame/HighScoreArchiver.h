@@ -10,6 +10,7 @@
 
 @interface HighScoreArchiver : NSObject
 + (void)addScore:(NSNumber*)score;
++ (BOOL)writeScores:(NSArray*)array;
 + (NSArray*)readScores;
 @end
 

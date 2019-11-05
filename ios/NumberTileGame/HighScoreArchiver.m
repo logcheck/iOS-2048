@@ -8,10 +8,6 @@
 #import "HighScoreArchiver.h"
 static NSString *const highScoreArchivePath = @"highScoreArchive";
 
-@interface HighScoreArchiver()
-+ (BOOL)writeScores:(NSArray*)scores;
-@end
-
 @implementation HighScoreArchiver
 
 + (NSString*)filePath {

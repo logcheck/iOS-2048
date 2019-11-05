@@ -3,12 +3,28 @@ import {AppRegistry, StyleSheet, Text, View, Button, NativeModules} from 'react-
 
 class RNHighScores extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      scores: props.scores
+    };
+
+    this._exitButtonPressed = this._exitButtonPressed.bind(this);
+    this._clearButtonPressed = this._clearButtonPressed.bind(this);
+  }
+
   _exitButtonPressed() {
-    NativeModules.F3HBridgeModule.exitHighScoreButtonTapped()
+    NativeModules.F3HBridgeModule.exitHighScoreButtonTapped(this.state.scores)
+  }
+
+  _clearButtonPressed() {
+    this.setState({
+      scores: []
+    })
   }
 
   render() {
-    var scores = this.props['scores']
+    var scores = this.state.scores;
 
     var scoreContent = scores.map((score, i) => (
       <Text key={'score-' + i}>
@@ -27,6 +43,9 @@ class RNHighScores extends React.Component {
       <View style={styles.container}>
         <Text style={styles.highScoresTitle}>2048 High Scores!</Text>
         <Text style={styles.scores}>{contents}</Text>
+        <Button title={'Clear'} onPress={this._clearButtonPressed}>
+          <Text>Clear</Text>
+        </Button>
         <Button title={'Exit'} onPress={this._exitButtonPressed}>
           <Text>Exit</Text>
         </Button>
