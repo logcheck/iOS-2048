@@ -33,18 +33,11 @@ static NSString *const highScoreArchivePath = @"highScoreArchive";
     NSArray* scores = self.readScores;
     scores = [scores arrayByAddingObject:score];
 
-
-
-    // This makes me cry
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]
                                         initWithKey:@"value"
                                         ascending:NO];
+    
     scores = [scores sortedArrayUsingDescriptors:@[sortDescriptor]];
-
-
-    if ([scores count] > 3) {
-        scores = [scores subarrayWithRange:NSMakeRange(0, 3)];
-    }
 
     [self writeScores:scores];
 }
