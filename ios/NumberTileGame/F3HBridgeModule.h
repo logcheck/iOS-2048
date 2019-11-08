@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface F3HBridgeModule : NSObject <RCTBridgeModule>
-+ (UIViewController*)getMenuViewController;
++ (UIViewController*)menuViewController;
 + (void)setMenuViewController:(UIViewController*)viewController;
 @end
 

@@ -13,7 +13,7 @@ static UIViewController *menuViewController;
 
 @implementation F3HBridgeModule
 
-+ (UIViewController*)getMenuViewController {
++ (UIViewController*)menuViewController {
     return menuViewController;
 }
 
@@ -27,7 +27,7 @@ RCT_EXPORT_METHOD(exitHighScoreButtonTapped:(NSArray*)scores) {
     NSLog(@"exitHighScoreButtonTapped called with scores %@!", scores);
     [HighScoreArchiver writeScores:scores];
     dispatch_async(dispatch_get_main_queue(), ^{
-        UIViewController* vc = [self.class getMenuViewController];
+        UIViewController* vc = [self.class menuViewController];
         [vc dismissViewControllerAnimated:YES completion:nil];
     });
 }
