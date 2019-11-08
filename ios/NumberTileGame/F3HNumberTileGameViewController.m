@@ -240,6 +240,7 @@
 }
 
 - (void)resetButtonTapped {
+    [HighScoreArchiver addScore:@(self.model.score)];
     [self.gameboard reset];
     [self.model reset];
     [self.model insertAtRandomLocationTileWithValue:2];
