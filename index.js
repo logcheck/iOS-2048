@@ -1,5 +1,5 @@
 import React from 'react';
-import {AppRegistry, StyleSheet, Text, View, Button, NativeModules} from 'react-native';
+import {FlatList, AppRegistry, StyleSheet, Text, View, Button, NativeModules} from 'react-native';
 
 class RNHighScores extends React.Component {
 
@@ -26,15 +26,18 @@ class RNHighScores extends React.Component {
   render() {
     var scores = this.state.scores;
 
-    var scoreContent = scores.map((score, i) => (
-      <Text key={'score-' + i}>
-        {score.value} - {score.createdAt}
-        {"\n"}
-      </Text>
-    ))
+    var scores = scores.map((score) => {
+      score['key'] = score['createdAt'];
+      return score;
+    })
 
     var contents = (scores.length > 0) ?
-      scoreContent
+      <FlatList
+        data={scores}
+        renderItem={(({item}) => {
+          return <Text style={styles.item}>{item.createdAt} - {item.value}</Text>
+        })}
+      />
     :
       <Text>No scores yet!</Text>
     ;
@@ -42,7 +45,7 @@ class RNHighScores extends React.Component {
     return (
       <View style={styles.container}>
         <Text style={styles.highScoresTitle}>2048 High Scores!</Text>
-        <Text style={styles.scores}>{contents}</Text>
+        {contents}
         <Button title={'Clear'} onPress={this._clearButtonPressed}>
           <Text>Clear</Text>
         </Button>
@@ -55,10 +58,16 @@ class RNHighScores extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  item: {
+    textAlign: 'left',
+    backgroundColor: '#DDD',
+    fontSize: 20,
+    marginBottom: 5
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'stretch',
     backgroundColor: '#FFFFFF',
   },
   highScoresTitle: {
