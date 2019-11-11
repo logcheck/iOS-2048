@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 import {FlatList, AppRegistry, StyleSheet, Text, View, Button, NativeModules} from 'react-native';
 
 class RNHighScores extends React.Component {
@@ -35,7 +36,7 @@ class RNHighScores extends React.Component {
       <FlatList
         data={scores}
         renderItem={(({item}) => {
-          return <Text style={styles.item}>{item.createdAt} - {item.value}</Text>
+          return <Text style={styles.item}>{moment(item.createdAt).format('MM/DD/YY hh:mm:ss A')} - {item.value}</Text>
         })}
       />
     :

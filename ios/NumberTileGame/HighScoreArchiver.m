@@ -21,9 +21,7 @@ static NSString *const highScoreArchivePath = @"highScoreArchive";
 + (void)addScore:(NSNumber*)value {
     NSLog(@"new score added of: %@", value);
 
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.dateStyle = NSDateFormatterShortStyle;
-    dateFormatter.timeStyle = NSDateFormatterShortStyle;
+    NSISO8601DateFormatter *dateFormatter = [[NSISO8601DateFormatter alloc] init];
     NSString *dateString = [dateFormatter stringFromDate:[NSDate date]];
 
     NSDictionary *score = @{
