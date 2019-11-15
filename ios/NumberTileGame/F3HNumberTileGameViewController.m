@@ -12,6 +12,7 @@
 #import "F3HControlView.h"
 #import "F3HScoreView.h"
 #import "F3HGameModel.h"
+#import "HighScoreArchiver.h"
 
 #define ELEMENT_SPACING 10
 
@@ -239,6 +240,7 @@
 }
 
 - (void)resetButtonTapped {
+    [HighScoreArchiver addScore:@(self.model.score)];
     [self.gameboard reset];
     [self.model reset];
     [self.model insertAtRandomLocationTileWithValue:2];
@@ -246,9 +248,7 @@
 }
 
 - (void)exitButtonTapped {
-    NSLog(@"=====>");
-    NSLog(@"=====> The score of this game was %li", self.model.score);
-    NSLog(@"=====>");
+    [HighScoreArchiver addScore:@(self.model.score)];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

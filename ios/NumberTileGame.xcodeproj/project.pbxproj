@@ -36,6 +36,8 @@
 		1A34882818E1713E00D021C3 /* F3HControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A34882718E1713E00D021C3 /* F3HControlView.m */; };
 		1A92D000191A016600E35C6C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A92CFFF191A016600E35C6C /* QuartzCore.framework */; };
 		2FB7D7D851F1FE84F08641BE /* Pods_NumberTileGameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B9724F74F253C2A04222D1F /* Pods_NumberTileGameTests.framework */; };
+		BC7AC26C236B72DB00528E9F /* F3HBridgeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7AC26B236B72DB00528E9F /* F3HBridgeModule.m */; };
+		BCD0A5F02369F63400BD2675 /* HighScoreArchiver.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD0A5EF2369F63400BD2675 /* HighScoreArchiver.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +100,10 @@
 		50DACEBBF950E4BB21352BB3 /* Pods-NumberTileGameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NumberTileGameTests.debug.xcconfig"; path = "Target Support Files/Pods-NumberTileGameTests/Pods-NumberTileGameTests.debug.xcconfig"; sourceTree = "<group>"; };
 		642EFAE794EB1672B107A7EF /* Pods-NumberTileGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NumberTileGame.debug.xcconfig"; path = "Target Support Files/Pods-NumberTileGame/Pods-NumberTileGame.debug.xcconfig"; sourceTree = "<group>"; };
 		9B9724F74F253C2A04222D1F /* Pods_NumberTileGameTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NumberTileGameTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC7AC26A236B72DB00528E9F /* F3HBridgeModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = F3HBridgeModule.h; sourceTree = "<group>"; };
+		BC7AC26B236B72DB00528E9F /* F3HBridgeModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = F3HBridgeModule.m; sourceTree = "<group>"; };
+		BCD0A5EE2369F60100BD2675 /* HighScoreArchiver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HighScoreArchiver.h; path = "/Users/michaelprouty/dev/logcheck/iOS-2048/ios/NumberTileGame/HighScoreArchiver.h"; sourceTree = "<absolute>"; };
+		BCD0A5EF2369F63400BD2675 /* HighScoreArchiver.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HighScoreArchiver.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +173,8 @@
 				1A3487BF18DEAD6E00D021C3 /* F3HAppDelegate.h */,
 				1A3487C018DEAD6E00D021C3 /* F3HAppDelegate.m */,
 				1A3487C218DEAD6E00D021C3 /* Main_iPhone.storyboard */,
+				BC7AC26A236B72DB00528E9F /* F3HBridgeModule.h */,
+				BC7AC26B236B72DB00528E9F /* F3HBridgeModule.m */,
 				1A3487C818DEAD6E00D021C3 /* F3HViewController.h */,
 				1A3487C918DEAD6E00D021C3 /* F3HViewController.m */,
 				1A3487CB18DEAD6E00D021C3 /* Images.xcassets */,
@@ -177,6 +185,8 @@
 				1A3487F218DEBADA00D021C3 /* F3HNumberTileGameViewController.m */,
 				1A3487F418DEBB9C00D021C3 /* F3HTileAppearanceProvider.h */,
 				1A3487F518DEBB9C00D021C3 /* F3HTileAppearanceProvider.m */,
+				BCD0A5EE2369F60100BD2675 /* HighScoreArchiver.h */,
+				BCD0A5EF2369F63400BD2675 /* HighScoreArchiver.m */,
 			);
 			path = NumberTileGame;
 			sourceTree = "<group>";
@@ -251,7 +261,6 @@
 				50DACEBBF950E4BB21352BB3 /* Pods-NumberTileGameTests.debug.xcconfig */,
 				0B44AB60B21B8345FDE82630 /* Pods-NumberTileGameTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -318,6 +327,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -465,6 +475,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC7AC26C236B72DB00528E9F /* F3HBridgeModule.m in Sources */,
 				1A3487C118DEAD6E00D021C3 /* F3HAppDelegate.m in Sources */,
 				1A34881018E146D800D021C3 /* F3HTileModel.m in Sources */,
 				1A3487BD18DEAD6E00D021C3 /* main.m in Sources */,
@@ -472,6 +483,7 @@
 				1A34880D18E1468400D021C3 /* F3HGameModel.m in Sources */,
 				1A3487CA18DEAD6E00D021C3 /* F3HViewController.m in Sources */,
 				1A34881F18E148DB00D021C3 /* F3HTileView.m in Sources */,
+				BCD0A5F02369F63400BD2675 /* HighScoreArchiver.m in Sources */,
 				1A3487F318DEBADA00D021C3 /* F3HNumberTileGameViewController.m in Sources */,
 				1A34881318E1477B00D021C3 /* F3HMergeTile.m in Sources */,
 				1A34882218E14BF200D021C3 /* F3HQueueCommand.m in Sources */,

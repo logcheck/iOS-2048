@@ -10,7 +10,11 @@
 
 #import "F3HViewController.h"
 
+#import "F3HBridgeModule.h"
+
 #import "F3HNumberTileGameViewController.h"
+
+#import "HighScoreArchiver.h"
 
 @interface F3HViewController ()
 @end
@@ -35,21 +39,13 @@
     RCTRootView *rootView =
     [[RCTRootView alloc] initWithBundleURL: jsCodeLocation
                                 moduleName: @"RNHighScores"
-                         initialProperties:@{@"scores" : @[
-                                                     @{
-                                                         @"name" : @"Alex",
-                                                         @"value": @"42"
-                                                         },
-                                                     @{
-                                                         @"name" : @"Joel",
-                                                         @"value": @"10"
-                                                         }
-                                                     ]
-                                             }
+                         initialProperties:@{@"scores" : [HighScoreArchiver readScores]}
                              launchOptions: nil];
-    UIViewController *vc = [[UIViewController alloc] init];
-    vc.view = rootView;
-    [self presentViewController:vc animated:YES completion:nil];
+    UIViewController *rootViewController = [[UIViewController alloc] init];
+    rootViewController.view = rootView;
+    [self presentViewController:rootViewController animated:YES completion:nil];
+
+    [F3HBridgeModule setMenuViewController:self];
 }
 
 @end
